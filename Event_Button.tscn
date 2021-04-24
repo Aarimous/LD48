@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Button_Normal.tres" type="StyleBox" id=1]
+[ext_resource path="res://Button_Pressed.tres" type="StyleBox" id=2]
+[ext_resource path="res://Button_Hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://Event_Button.gd" type="Script" id=4]
+[ext_resource path="res://Font_Small.tres" type="DynamicFont" id=5]
+
+[node name="Button" type="Button"]
+margin_right = 1112.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_fonts/font = ExtResource( 5 )
+align = 0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1107.0
+margin_bottom = 170.0
+custom_fonts/font = ExtResource( 5 )
+text = "1: Buy off you're citzens. Incease you popularioty by 10 and increase the national debt by 100B 1: Buy off you're citzens. Incease you
+1: Buy off you're citzens. Incease you popularioty by 10 and increase the national debt by 100B 1: Buy off you're citzens. Incease you popularioty by 10 and increase the national debt by 100B
+1: Buy off you're citzens. Incease you popularioty by 10 and increase the national debt by 100B 1: Buy off you're citzens. Incease you popularioty by 10 and increase the national debt by 100B popularioty by 10 and increase the national debt by 100B"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="." to="." method="_on_Button_button_up"]

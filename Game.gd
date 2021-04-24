@@ -54,6 +54,10 @@ func change_popularity(amount):
 func change_debt(amount):
 	Debt = Debt + amount
 	SignalBus.emit_signal("updated_Debt", Debt)
+	
+func change_gloabl_prestige(amount):
+	Gloabl_Prestige = Gloabl_Prestige + amount
+	SignalBus.emit_signal("updated_Gloabl_Prestige", Gloabl_Prestige)
 
 func progress_month():
 	Month += 1

@@ -9,7 +9,7 @@ extends Control
 #exported variables
 export(Array,Color) var negative_colors
 export(Array,Font) var fonts_by_size
-
+export var event_popup : PackedScene
 var president
 var vp
 var country
@@ -130,3 +130,8 @@ func _on_updated_Date_Text(new_text):
 			
 func _on_Next_Month_button_up():
 	Game.next_turn()
+	var pop = event_popup.instance()
+	add_child(pop)
+	var event = load("res://Events/1.gd").new()
+	pop.run_event(event)
+	pop.popup()

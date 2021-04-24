@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Event",
+"language": "GDScript",
+"path": "res://Events/Event.gd"
+} ]
+_global_script_class_icons={
+"Event": ""
+}
+
 [application]
 
 config/name="Ld 48"
