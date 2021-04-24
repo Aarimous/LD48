@@ -1,0 +1,204 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Button_Normal.tres" type="StyleBox" id=1]
+[ext_resource path="res://Button_Pressed.tres" type="StyleBox" id=2]
+[ext_resource path="res://Button_Hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://Theme.tres" type="Theme" id=4]
+[ext_resource path="res://Script.gd" type="Script" id=5]
+[ext_resource path="res://Main.gd" type="Script" id=6]
+[ext_resource path="res://Font_Bigger.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Font_Normal.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Screen_Text.tscn" type="PackedScene" id=9]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -176.0 ]
+}
+
+[node name="Ui" type="Control" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+theme = ExtResource( 4 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+negative_colors = [ Color( 1, 1, 1, 1 ), Color( 1, 0.827451, 0.827451, 1 ), Color( 1, 0.756863, 0.756863, 1 ), Color( 1, 0.631373, 0.631373, 1 ), Color( 1, 0.501961, 0.501961, 1 ), Color( 1, 0.392157, 0.392157, 1 ), Color( 1, 0.321569, 0.321569, 1 ), Color( 1, 0.235294, 0.235294, 1 ), Color( 1, 0.156863, 0.156863, 1 ), Color( 1, 0, 0, 1 ) ]
+fonts_by_size = [ ExtResource( 8 ), ExtResource( 7 ), null, null ]
+
+[node name="Rows" type="VBoxContainer" parent="Ui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Row1" type="HBoxContainer" parent="Ui/Rows"]
+margin_right = 1280.0
+margin_bottom = 213.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="President" parent="Ui/Rows/Row1" instance=ExtResource( 9 )]
+margin_right = 312.0
+label = "President"
+value = "Andrew Olson"
+
+[node name="VP" parent="Ui/Rows/Row1" instance=ExtResource( 9 )]
+margin_left = 322.0
+label = "Viec President"
+value = "Jeff Byson"
+
+[node name="Country" parent="Ui/Rows/Row1" instance=ExtResource( 9 )]
+margin_left = 645.0
+margin_right = 957.0
+label = "Country:"
+value = "Name"
+
+[node name="Date" parent="Ui/Rows/Row1" instance=ExtResource( 9 )]
+margin_left = 967.0
+margin_right = 1280.0
+label = "Date:"
+value = "Jan-2021"
+
+[node name="Row2" type="HBoxContainer" parent="Ui/Rows"]
+margin_top = 223.0
+margin_right = 1280.0
+margin_bottom = 436.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Debt" parent="Ui/Rows/Row2" instance=ExtResource( 9 )]
+margin_right = 638.0
+label = "Debt:"
+value = "$100T"
+
+[node name="Popularity" parent="Ui/Rows/Row2" instance=ExtResource( 9 )]
+margin_left = 642.0
+margin_right = 1280.0
+label = "Popularity:"
+value = "100%"
+
+[node name="Row3" type="HBoxContainer" parent="Ui/Rows"]
+margin_top = 446.0
+margin_right = 1280.0
+margin_bottom = 659.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Population" parent="Ui/Rows/Row3" instance=ExtResource( 9 )]
+margin_right = 317.0
+label = "Population:"
+value = "20M"
+
+[node name="GDP" parent="Ui/Rows/Row3" instance=ExtResource( 9 )]
+margin_left = 321.0
+margin_right = 638.0
+label = "Population:"
+value = "2T"
+
+[node name="GDP_Ratio" parent="Ui/Rows/Row3" instance=ExtResource( 9 )]
+margin_left = 642.0
+margin_right = 959.0
+label = "GRD To Debt Ratio"
+value = "100%"
+
+[node name="Global_Prestige" parent="Ui/Rows/Row3" instance=ExtResource( 9 )]
+margin_left = 963.0
+margin_right = 1280.0
+label = "Global Prestige"
+value = "1000"
+
+[node name="Row4" type="HBoxContainer" parent="Ui/Rows"]
+margin_top = 669.0
+margin_right = 1280.0
+margin_bottom = 719.0
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Ui/Rows/Row4"]
+margin_left = 1145.0
+margin_right = 1280.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next_Month" type="Button" parent="Ui/Rows/Row4/MarginContainer"]
+margin_right = 135.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+theme = ExtResource( 4 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+text = " Go To Next Month "
+
+[node name="Panel" type="Panel" parent="Ui"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -152.0
+margin_bottom = 112.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Ui/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 2
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Ui/Panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 2.0
+margin_right = 153.0
+margin_bottom = 110.0
+custom_constants/separation = 40
+
+[node name="Pop_Cont" type="HBoxContainer" parent="Ui/Panel/MarginContainer/HBoxContainer"]
+margin_right = 198.0
+margin_bottom = 17.0
+
+[node name="Popularity" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Pop_Cont"]
+margin_right = 77.0
+margin_bottom = 17.0
+text = "Popularity:"
+
+[node name="Popularity_Amount" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Pop_Cont"]
+margin_left = 81.0
+margin_right = 133.0
+margin_bottom = 17.0
+text = "50.00%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date_Cont" type="HBoxContainer" parent="Ui/Panel/MarginContainer/HBoxContainer"]
+margin_top = 57.0
+margin_right = 198.0
+margin_bottom = 74.0
+
+[node name="Date" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Date_Cont"]
+margin_right = 33.0
+margin_bottom = 17.0
+text = "Date"
+
+[node name="Current_Date" type="Label" parent="Ui/Panel/MarginContainer/HBoxContainer/Date_Cont"]
+margin_left = 37.0
+margin_right = 104.0
+margin_bottom = 17.0
+text = "Jan-2020"
+
+[connection signal="button_up" from="Ui/Rows/Row4/MarginContainer/Next_Month" to="Ui" method="_on_Next_Month_button_up"]
